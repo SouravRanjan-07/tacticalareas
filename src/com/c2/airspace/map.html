@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tactical Airspace Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #12161a;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        /* Tactical Popup Styling */
+        .leaflet-popup-content-wrapper {
+            background: #1e252b;
+            color: #ffffff;
+            border: 1px solid #ff4444;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .leaflet-popup-tip {
+            background: #1e252b;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([20.5937, 78.9629], 5);
+
+		L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+		            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+		            maxZoom: 18
+		        }).addTo(map);
+
+        // Called by Java once the page loads
+        function addAirspaceZone(geoJsonString) {
+            try {
+                var geojsonData = JSON.parse(geoJsonString);
+
+                var zoneLayer = L.geoJSON(geojsonData, {
+                    style: function (feature) {
+                        return {
+                            color: "#ff3333",       // Red perimeter line
+                            weight: 2,
+                            opacity: 0.9,
+                            fillColor: "#ff0000",   // Translucent red fill
+                            fillOpacity: 0.25
+                        };
+                    },
+                    onEachFeature: function (feature, layer) {
+                        if (feature.properties) {
+                            var zoneName = feature.properties.zone_name || "UNKNOWN";
+                            var maxAlt = feature.properties.max_alt || "UNSPECIFIED";
+                            var threat = feature.properties.threat || "PROHIBITED";
+
+                            var popupContent = "<b>[RESTRICTED AIRSPACE]</b><br/>" +
+                                               "<b>Zone:</b> " + zoneName + "<br/>" +
+                                               "<b>Max Alt:</b> " + maxAlt + " m<br/>" +
+                                               "<b>Threat Level:</b> <span style='color:#ff5555;'>" + threat + "</span>";
+                            layer.bindPopup(popupContent);
+                        }
+                    }
+                }).addTo(map);
+
+                // Automatically zoom and center the map on the loaded polygon
+                map.fitBounds(zoneLayer.getBounds());
+                console.log("Airspace zone successfully rendered.");
+            } catch (err) {
+                console.error("Failed to render GeoJSON: " + err);
+            }
+        }
+    </script>
+</body>
