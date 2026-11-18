@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c2.airspace.TacticalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airspace.TacticalController">
    <top>
       <Label text="TACTICAL C2 AIRSPACE MONITOR" BorderPane.alignment="CENTER">
          <font>
@@ -22,7 +22,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="assetTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="assetTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
                       <TableColumn fx:id="callsignCol" prefWidth="75.0" text="Callsign" />
@@ -30,6 +30,7 @@
                         <TableColumn fx:id="statusCol" prefWidth="75.0" text="Status" />
                     </columns>
                   </TableView>
+                  <Label fx:id="corridorInfoLabel" layoutX="8.0" layoutY="620.0" prefHeight="80.0" text="Select an asset to inspect corridor proximity and radar buffers." wrapText="true" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
                </children>
             </AnchorPane>
           <AnchorPane fx:id="mapContainer" minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="654.0">

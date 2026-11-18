@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "intersection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{"type":"Feature","properties":{"fid":1,"corridor_name":"CORRIDOR-ALPHA","min_alt":130,"id":1,"zone_name":"SECTOR_RED_ALPHA","max_alt":3000,"threat":"PROHIBITED"},"geometry":{"type":"MultiLineString","coordinates":[[[83.041275701522679,23.277378037245256,0.0],[83.853412809808532,20.952808953764571,0.0],[78.771859862226648,22.170073254982817,0.0],[77.816402519096471,22.746276273594351,0.0]]]}}
+]
+}

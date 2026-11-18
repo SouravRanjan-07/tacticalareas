@@ -1,4 +1,4 @@
-package com.c2.airspace;
+package airspace;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("TacticalView.fxml"));
             Scene scene = new Scene(root, 1000, 700);
-            
+
             primaryStage.setTitle("Tactical C2 Airspace Monitor");
             primaryStage.setScene(scene);
             primaryStage.show();

@@ -1,4 +1,4 @@
-package com.c2.airspace;
+package airspace;
 
 public class AirAsset {
 
@@ -6,12 +6,13 @@ public class AirAsset {
     private String callsign;
     private double longitude;
     private double latitude;
-    private int altitude;      // in meters
-    private double heading;    // degrees (0 - 360)
-    private int speed;         // knots / km/h
-    private String status;     // "CLEAR", "CAUTION", "BREACH"
+    private int altitude; // in meters
+    private double heading; // degrees (0 - 360)
+    private int speed; // knots / km/h
+    private String status; // "CLEAR", "CAUTION", "BREACH"
 
-    public AirAsset(String id, String callsign, double longitude, double latitude, int altitude, double heading, int speed, String status) {
+    public AirAsset(String id, String callsign, double longitude, double latitude, int altitude, double heading,
+            int speed, String status) {
         this.id = id;
         this.callsign = callsign;
         this.longitude = longitude;

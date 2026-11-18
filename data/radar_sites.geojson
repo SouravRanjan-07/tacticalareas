@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "radar_sites",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{"type":"Feature","properties":{"fid":1,"site_name":"RADAR_01","radar_range_km":33},"geometry":{"type":"Point","coordinates":[77.811603436970771,10.99262425379125]}},
+{"type":"Feature","properties":{"fid":2,"site_name":"RADAR_2","radar_range_km":222},"geometry":{"type":"Point","coordinates":[75.920766820039148,13.762657468230113]}},
+{"type":"Feature","properties":{"fid":3,"site_name":"RADAR_03","radar_range_km":333},"geometry":{"type":"Point","coordinates":[81.593276670834001,16.625271041823535]}},
+{"type":"Feature","properties":{"fid":4,"site_name":"RADAR_4","radar_range_km":2222},"geometry":{"type":"Point","coordinates":[79.604638159923169,13.889281690191293]}}
+]
+}

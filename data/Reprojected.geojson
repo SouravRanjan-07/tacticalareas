@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "Reprojected",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32644" } },
+"features": [
+{"type":"Feature","properties":{"fid":1,"site_name":"RADAR_01","radar_range_km":66},"geometry":{"type":"Point","coordinates":[151510.711748024448752,1217014.24217536766082]}},
+{"type":"Feature","properties":{"fid":2,"site_name":"RADAR_2","radar_range_km":100},"geometry":{"type":"Point","coordinates":[-49711.676826187409461,1527285.436293917009607]}},
+{"type":"Feature","properties":{"fid":3,"site_name":"RADAR_03","radar_range_km":200},"geometry":{"type":"Point","coordinates":[563275.394525296520442,1838195.13683225447312]}},
+{"type":"Feature","properties":{"fid":4,"site_name":"RADAR_4","radar_range_km":150},"geometry":{"type":"Point","coordinates":[349228.649967153090984,1535922.236042962176725]}}
+]
+}
